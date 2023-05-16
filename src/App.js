@@ -9,7 +9,7 @@ export default function App() {
     document.title = toggle
       ? "Welcome to Little Lemon"
       : "Using the useEffect hook";
-  }, []);
+  }, [toggle]);
 
   return (
     <div>
