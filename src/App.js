@@ -19,11 +19,15 @@ export default function App() {
       .then((data) => setUser(data.results[0]));
   }, [request]);
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch("http://api.coindesk.com/v1/bpi/currentprice.json")
       .then((res) => res.json())
       .then((jsonData) => setBtcData(jsonData.bpi.USD))
       .catch((e) => console.log(e));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   return (
