@@ -39,7 +39,11 @@ export default function App() {
       </div>
       <div>
         <button onClick={newUser}>Get New User</button>
-        <p>{user.email} </p>
+        {Object.keys(user).length > 0 ? (
+          <p>{user.email} </p>
+        ) : (
+          <h1>Data Pending...</h1>
+        )}
       </div>
       <div>
         <h2>Current BTC/USD Data:</h2>
