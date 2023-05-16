@@ -5,6 +5,12 @@ export default function App() {
 
   const clickHandler = () => setToggle(!toggle);
 
+  useEffect(() => {
+    document.title = toggle
+      ? "Welcome to Little Lemon"
+      : "Using the useEffect hook";
+  });
+
   return (
     <div>
       <h1>Using the useEffect hook</h1>
